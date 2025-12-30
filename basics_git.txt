@@ -1,0 +1,211 @@
+git --version = git version 2.39.5 (Apple Git-154)
+
+2) cd Desktop - moving from one folder to another this could be anything 
+                can create with makedir as well
+
+                cd, pwd, touch, mkdir = learn basic terminal 
+
+3) mkdir git-mastery -- create folder called git-one inside of desktop 
+
+4) cd git-mastery --- go inside of desktop of git-mastery
+
+5) touch one.txt    touch two.txt - start new files 
+
+6) mkdir myfolder   and cd Myfolder 
+
+7) touch three.txt  --- inside of mkdir 
+
+8) cd .. - go back 
+
+9) open . --- open the folder
+
+10) git init --- git initialize telling git to start wroking inside this folder from now
+
+Initialized empty Git repository in /Users/sriramrajan/Desktop/git-mastery/.git/ = git started tracking this folder 
+
+(base) sriramrajan@Srirams-MacBook-Air-2 git-mastery % ls
+MrFolder	one.txt		two.txt
+(base) sriramrajan@Srirams-MacBook-Air-2 git-mastery % ls -la
+total 32
+drwxr-xr-x@   7 sriramrajan  staff   224 Dec 30 11:43 .
+drwx------@ 277 sriramrajan  staff  8864 Dec 30 11:43 ..
+-rw-r--r--@   1 sriramrajan  staff  6148 Dec 30 11:42 .DS_Store
+drwxr-xr-x    9 sriramrajan  staff   288 Dec 30 11:43 .git
+drwxr-xr-x    4 sriramrajan  staff   128 Dec 30 11:42 MrFolder
+-rw-r--r--@   1 sriramrajan  staff     3 Dec 30 11:41 one.txt
+-rw-r--r--@   1 sriramrajan  staff     4 Dec 30 11:41 two.txt
+(base) sriramrajan@Srirams-MacBook-Air-2 git-mastery % 
+
+.git = CORE OF THE ENTIRE PROJECT, KEEPS WHICH FILES HAVE CHANGED, WHO MADE IT, WHAT PREVIOUS VERSIONS WHERE 
+
+
+STARTED REMOTE GIT MASTERY FILE 
+        ONE.txt
+        TWO.txt 
+
+
+cd .. / back 
+
+
+github CODE BUTTON 
+
+    HTTPS https://github.com/deepworkengineer/git-learning-.git
+
+
+CLONE GITHUB REMOTE TO local
+
+    git clone https://github.com/deepworkengineer/git-learning-.git
+
+(base) sriramrajan@Srirams-MacBook-Air-2 Desktop % git clone https://github.com/deepworkengineer/git-learning-.git
+Cloning into 'git-learning-'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+(base) sriramrajan@Srirams-MacBook-Air-2 Desktop % 
+
+looks like this 
+
+
+
+
+
+(base) sriramrajan@Srirams-MacBook-Air-2 Desktop % cd git-learning-
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % ls
+one.txt	two.txt
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % 
+
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % ls -la
+total 16
+drwxr-xr-x@   5 sriramrajan  staff   160 Dec 30 11:56 .
+drwx------@ 278 sriramrajan  staff  8896 Dec 30 11:56 ..
+drwxr-xr-x   12 sriramrajan  staff   384 Dec 30 11:56 .git
+-rw-r--r--    1 sriramrajan  staff     4 Dec 30 11:56 one.txt
+-rw-r--r--    1 sriramrajan  staff     4 Dec 30 11:56 two.txt
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % 
+
+
+PERFECT NOW ALL OF STARTING TIER IS OVER
+
+
+
+
+
+
+
+LOCAL REMOTE git-learning- 
+
+CHANGE ONE.txt - add 1 to it 
+CHANGE TWO.txt - add 2 to it 
+
+now GIT STATUS 
+
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   one.txt
+	modified:   two.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(base) sriramrajan@Srirams-MacBook-Air-2 git-learning- % 
+
+
+
+
+MOVE WORKING DIRECTORY --> STAGING ==== Adding 
+
+
+add new FOLDER TO REMOTE ---- mkdir MyFolder 
+
+touch three.txt = start new project 
+
+
+
+cd .. - go to root folder 
+
+git status = new folder === wrong 
+             old folder === right
+git add --all 
+git add -A 
+this adds stuff new stuff as right 
+
+git add . === only add CHANGED FILE (edited one and two isint staged!!!)
+
+
+git reset = redo or undo, new folder = wrong again 
+THIS IS BACK TO UNSTAGED NOT YET committed
+
+git add * = add only the new added file = not deleted ones
+
+git status:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   MyFolder/three.txt
+	new file:   four.txt
+	modified:   one.txt
+	modified:   two.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .DS_Store
+	deleted:    two.txt
+
+git add one.txt = add only one file 
+git add * .txt  = stage all .txt files (not stage deleted or modified)
+
+
+
+
+    PART 3: STAGING AREA TO LOCAL REPO -- COMMIT
+
+git commit -m "message"
+
+ git reset HEAD~
+Unstaged changes after reset:
+M	one.txt
+D	two.txt
+THIS UNDO LAST COMMIT BRING BACK TO WORKING DIRECTORY
+
+
+WANT TO DELETED FILE AND STAGE DELETION AT THE SAME TIME??
+
+git rm four.txt - delete and stage deleted 
+
+git reset = only bring back staged not actual file 
+git reset --hard (this brings back file) === SUPER IMPORTANT
+
+
+WHEN EDITED FOUR.TXT (ADD 4)
+NOW DELETE = git rm four.txt 
+error: the following file has local modifications:
+    four.txt
+SINCE WE HAVE MADE CHANGES 
+
+SO ,
+git rm -f four.txt (FORCEFULLY REMOVE four.txt)
+
+
+to bring back four.txt 
+git reset --hard === BRINGS BACK FORCEFULLY (SUPER IMPORTANT)
+git rm --cached four.txt == REMOVE FROM STAGING BUT IS IN LOCAL 
+ (--force = complety deletes the file
+  --cached = only removes from staging)
+
+
+
+git rm -r <FOLDER> r = recursive (has subfolder or files = all files will be removed recursivly)
+git rm -r MyFolder
+rm 'MyFolder/three.txt'
+THIS DELETES FILES AND SUBFOLDER AND MAIN FOLDER 
+
+
+
+
+
+                    

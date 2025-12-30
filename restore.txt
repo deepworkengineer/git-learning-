@@ -1,0 +1,42 @@
+we wrote a lot of code, we need to go back but isnt working 
+
+CHANGED ONE.TXT = NEW FEATURE IS FUN TEXT 
+need to go back to previous version 
+
+                git restore one.txt 
+
+git restore services 
+git restore . (all the things back version)
+
+
+if already staged 
+    git restore --staged (undo them using the -- staged flag)
+    git restore --staged filename 
+    git restore --staged .
+
+
+
+                     STASH 
+
+temporarily set aside your unfinished work 
+switch to another branch to do something else 
+
+FEATURE BRANCH --- NEED TO GO TO BACKEND BRANCH 
+        made changes to one.txt (MAIN BRANCH)
+        now move to another BRANCH - NOT POSSIBLE 
+
+
+git checkout development
+error: Your local changes to the following files would be overwritten by checkout:
+	one.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+
+                    git stash 
+
+Saved working directory and index state WIP on main: 
+d6d88e1 Add line with number 3333 to three.txt
+
+
+stash and reso

@@ -1,0 +1,90 @@
+
+
+PUSH ==== SEND LOCAL CHANGES TO THE REMOTE (GITHUB)
+
+
+FETCH ==== BRING REMOTE CHANGES INTO YOUR LOCAL repository,
+           BUT NOT MERGING THEM YET 
+
+PULL ==== FETCHING + MERGING SO YOUR WORKING DIRECTORY
+          IMMEDIATELY REFLECTS THE REMOTE CHANGES 
+
+
+
+          PULL == FETCH + MERGE 
+
+
+
+
+                    PUSH 
+
+git push origin main == SUPER IMPORTANT 
+Enumerating objects: 23, done.
+Counting objects: 100% (23/23), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (21/21), 2.31 KiB | 788.00 KiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To https://github.com/deepworkengineer/git-learning-.git
+   3e289c1..3647399  main -> main
+
+git branch 
+git branch development 
+git push origin development 
+
+same to staging as well 
+
+
+
+
+                            FETCH
+
+REMOTE MAIN/three.txt == added 3 to it 
+
+                    git fetch 
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 1.85 KiB | 1024 bytes/s, done.
+From https://github.com/deepworkengineer/git-learning-
+   3647399..d1fc4ee  main       -> origin/main
+
+
+
+                    git merge
+Updating 3647399..d1fc4ee
+Fast-forward
+ four.txt  | 3 ++-
+ three.txt | 3 ++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+
+
+
+
+                PULL 
+
+added more 333 text in remote 
+need to bring and MERGE ==== LOCAL MAIN BRANCH AT ONCE 
+
+                git pull = fetch + merge 
+        
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 942 bytes | 188.00 KiB/s, done.
+From https://github.com/deepworkengineer/git-learning-
+   d1fc4ee..d6d88e1  main       -> origin/main
+Updating d1fc4ee..d6d88e1
+Fast-forward
+ three.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+
+
+
+                    PULL REQUEST
+

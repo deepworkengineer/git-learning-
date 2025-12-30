@@ -1,0 +1,131 @@
+git log = see everything which has been done 
+
+git log 
+commit 922b9f0caa300a891fe9294793bf6957a36c25a9 (HEAD -> main)
+Author: deepworkengineer <skyplertech@gmail.com>
+Date:   Tue Dec 30 13:27:33 2025 +0530
+
+    I have made some changes to the files
+
+commit 3e289c18f72fd20f84b90d1f1f5467544078f12a (origin/main, origin/HEAD)
+Author: Sriram Rajan <134303815+deepworkengineer@users.noreply.github.com>
+Date:   Tue Dec 30 11:48:27 2025 +0530
+
+    Add two.txt with initial content 'two'
+
+
+
+git log --oneline      ==       just IMPORTANt INFO WE NEED
+922b9f0 (HEAD -> main) I have made some changes to the files
+3e289c1 (origin/main, origin/HEAD) Add two.txt with initial content 'two'
+2dafe5b Add one.txt with initial content 'one'
+
+
+
+
+
+                    BRANCHING
+
+
+main = this is the core branch 
+
+1) git branch = which branch am i in (* shows branch we are right now)
+2) git branch development = start a new branch 
+3) git checkout development = go to development branch (same contents as main branch)
+
+
+in development branch: 
+    added three.txt file and three as text in it 
+
+git add .
+git commit -m "i added new file with text three in it"
+THIS IS ONLY IN DEVELOPMENT BRANCH NOT MAIN BRANCH
+
+
+
+
+
+MAIN BRANCH TO DEVELOPMENT BRANCH NOW 
+    git merge main -m "Merging main into development"
+now development branch has all the changed made in main branch 
+    git merge development -m "merging dev to main branch"
+
+
+both are done 
+BUT,
+        CONFLICTS MAY OCCUR
+        GIT 
+git merge staging
+Auto-merging four.txt
+CONFLICT (content): Merge conflict in four.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+
+four
+<<<<<<< HEAD
+44bro444
+=======
+444444444444
+>>>>>>> staging
+
+
+
+
+it gives like this WE REMOVE THE THINGS WE DONT WANT and RESOLVE CHANGES
+
+
+git merge staging == MERGES BOTH TOGETHER = SUPER IMPORTANT 
+
+
+
+                TIME TRAVEL 
+
+git log --oneline
+3647399 (HEAD -> main) update online
+0174ef0 (staging) changed 4 to millions of 44
+36d173b Merging main into development
+
+
+git checkout 36d173b = it will go back to this stage 
+git checkout main
+
+
+
+
+                COMMIT 
+
+what lines were added ? deleted ?
+
+                git diff 3647399 36d173b
+
+        SHOWS EXACT CHANGES MADE BETWEEN THEM 
+diff --git a/four.txt b/four.txt
+index 3df2618..162188b 100644
+--- a/four.txt
++++ b/four.txt
+@@ -1,3 +1,3 @@
+ four
+ 
+-444444444444
+\ No newline at end of file
++44
+\ No newline at end of file
+diff --git a/one.txt b/one.txt
+index b02f7e0..19e5830 100644
+--- a/one.txt
++++ b/one.txt
+@@ -1 +1,2 @@
+-CLEAN ONE 
+\ No newline at end of file
++one
++1
+\ No newline at end of file
+
+
+
+
+                
+
+
+

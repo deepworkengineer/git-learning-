@@ -1,0 +1,23 @@
+there are more than 5 dev working on code at the same time 
+
+local = local folders and files in it
+remote = GITHUB
+
+        1) working directory = write code, create new files, modify existing one
+
+
+        2) staging = my changes are ready - they can move to the next step
+
+
+        3) local repository = takes staged to local, middle ground
+                a temp space, where files sit between 
+                working directory and final save in repository
+
+                 OOMMIT 
+
+                PUSH
+
+        4) Remote = push local repo to remote (github)
+
+    
+       
